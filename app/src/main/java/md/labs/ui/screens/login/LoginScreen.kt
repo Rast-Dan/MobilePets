@@ -99,15 +99,15 @@ private fun ButtonSection(
         onClick = {
             focusManager.clearFocus()
 
-            navController.navigate(Navigation.List.route)
-            //if (viewModel.username.trim().isNotEmpty() && viewModel.password.trim().isNotEmpty()
-            //    && viewModel.email.trim().isNotEmpty())
-            //{
-            //    Toast.makeText(context, "Completed", Toast.LENGTH_SHORT).show()
-            //    navController.navigate(Navigation.List.route)
-            //}
-            //else
-            //    Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
+            //navController.navigate(Navigation.List.route)
+            if (viewModel.username.trim().isNotEmpty() && viewModel.password.trim().isNotEmpty()
+                && viewModel.email.trim().isNotEmpty())
+            {
+                Toast.makeText(context, "Completed", Toast.LENGTH_SHORT).show()
+                navController.navigate(Navigation.List.route)
+            }
+            else
+                Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
         },
         colors = ButtonDefaults.buttonColors(containerColor = colorButtonBackground),
         contentPadding = PaddingValues()

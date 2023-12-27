@@ -16,16 +16,17 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import dagger.hilt.android.AndroidEntryPoint
 import coil.Coil
 import com.google.gson.Gson
-import dagger.hilt.android.AndroidEntryPoint
+import com.google.gson.reflect.TypeToken
 import md.labs.model.MyImageLoaderFactory
+import md.labs.model.petfinderdata.Pet
 import md.labs.ui.Navigation
 import md.labs.ui.screens.detail.DetailScreen
 import md.labs.ui.screens.list.ListScreen
 import md.labs.ui.screens.login.LoginScreen
 import md.labs.ui.screens.splash.SplashScreen
-import md.labs.model.petfinderdata.Pet
 import java.net.URLDecoder
 
 @AndroidEntryPoint

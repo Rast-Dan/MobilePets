@@ -48,42 +48,46 @@ import com.google.gson.Gson
 import md.labs.R
 import md.labs.model.petfinderdata.Pet
 import md.labs.ui.Navigation
+import md.labs.ui.theme.MobileDevelopmentLabsTheme
 import md.labs.viewmodel.ListScreenViewModel
 import java.net.URLEncoder
 
 @Composable
-fun ListScreen(navController: NavHostController, viewModel:ListScreenViewModel = hiltViewModel()) {
+fun ListScreen(navController: NavHostController) {
+    MobileDevelopmentLabsTheme {
 
-    val context = LocalContext.current
-    LaunchedEffect(context) {
-        viewModel.loadPetsList(context)
-    }
-
-    val dataOffset = 0
-    val elementsPerPage = 20
-
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text("ListScreen", style = MaterialTheme.typography.headlineLarge)
-        if (!viewModel.isPetsListLoaded)
-            CircularProgressIndicator()
-        else if (viewModel.errorMessage !== null) {
-            Text(
-                modifier = Modifier.padding(all = 8.dp),
-                textAlign = TextAlign.Center,
-                text = viewModel.errorMessage!!,
-                style = MaterialTheme.typography.headlineLarge,
-                color = Color.Red
-            )
+        val viewModel = viewModel<ListScreenViewModel>()
+        val context = LocalContext.current
+        LaunchedEffect(context) {
+            viewModel.loadPetsList(context)
         }
-        else {
-            val pets by viewModel.pets.collectAsState(
-                initial = emptyList()
-            )
-            PetsList(pets = ArrayList(pets), originalDataOffset = dataOffset, navController = navController)
+
+        val dataOffset = 0
+        val elementsPerPage = 20
+
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text("Petfinder", style = MaterialTheme.typography.headlineMedium)
+            if (!viewModel.isPetsListLoaded)
+                CircularProgressIndicator()
+            else if (viewModel.errorMessage !== null) {
+                Text(
+                    modifier = Modifier.padding(all = 8.dp),
+                    textAlign = TextAlign.Center,
+                    text = viewModel.errorMessage!!,
+                    style = MaterialTheme.typography.headlineLarge,
+                    color = Color.Red
+                )
+            }
+            else {
+                val pets by viewModel.pets.collectAsState(
+                    initial = emptyList()
+                )
+                PetsList(pets = ArrayList(pets), originalDataOffset = dataOffset, navController = navController)
+            }
         }
     }
 }
@@ -136,8 +140,7 @@ private fun PetPhotoCard(
     Surface(
         modifier = Modifier
             .size(100.dp)
-            .clip(RoundedCornerShape(12.dp)),
-
+            .clip(RoundedCornerShape(12.dp))
     ) {
         AsyncImage(
             model = ImageRequest.Builder(LocalContext.current)

@@ -4,9 +4,9 @@ import com.google.gson.annotations.SerializedName
 
 data class Environment(
     @SerializedName("cats")
-    val cats: Boolean = false,
+    val cats: Boolean?,
     @SerializedName("children")
-    val children: Boolean = false,
+    val children: Boolean?,
     @SerializedName("dogs")
-    val dogs: Boolean = false
+    val dogs: Boolean?
 )

@@ -1,6 +1,7 @@
 package md.labs.model.petfinderdata
 
 import com.google.gson.annotations.SerializedName
+import md.labs.model.petfinderdata.Address
 
 data class Contact(
     @SerializedName("address")

@@ -28,10 +28,22 @@ val Typography = Typography(
                 fontWeight = FontWeight.Normal,
                 fontSize = 48.sp
         ),
+
         labelMedium = TextStyle(
                 fontFamily = Inter,
                 fontWeight = FontWeight.Normal,
                 fontSize = 21.sp,
                 color = Color(0xFF575757)
+        ),
+
+        bodyLarge = TextStyle(
+                fontFamily = Inter,
+                fontWeight = FontWeight.Normal,
+                fontSize = 24.sp
+        ),
+        bodyMedium = TextStyle(
+                fontFamily = Inter,
+                fontWeight = FontWeight.Normal,
+                fontSize = 16.sp
         ),
 )

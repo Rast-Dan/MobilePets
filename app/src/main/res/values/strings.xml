@@ -9,4 +9,5 @@
     <string name="login_button_join_us">Join Us</string>
     <string name="pet_preview">The preview of pet</string>
     <string name="dummy_image">The dummy image</string>
+    <string name="pet_picture">Pet Picture</string>
 </resources>
