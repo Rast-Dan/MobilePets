@@ -33,6 +33,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
@@ -45,10 +46,8 @@ import md.labs.ui.theme.MobileDevelopmentLabsTheme
 import md.labs.viewmodel.ListScreenViewModel
 
 @Composable
-fun ListScreen(navController: NavHostController) {
+fun ListScreen(navController: NavHostController, viewModel: ListScreenViewModel = hiltViewModel()) {
     MobileDevelopmentLabsTheme {
-
-        val viewModel = viewModel<ListScreenViewModel>()
         val context = LocalContext.current
         LaunchedEffect(context) {
             viewModel.loadPetsList(context)
