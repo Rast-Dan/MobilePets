@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Mobile Development Labs</string>
+    <string name="app_logo">Application Logo</string>
+    <string name="title_part1">study</string>
+    <string name="title_part2">IN</string>
+    <string name="login_placeholder_username">Create Username</string>
+    <string name="login_placeholder_password">Create Password</string>
+    <string name="login_placeholder_email">Email ID</string>
+    <string name="login_button_join_us">Join Us</string>
+    <string name="pet_preview">The preview of pet</string>
+    <string name="dummy_image">The dummy image</string>
+    <string name="pet_picture">Pet Picture</string>
+</resources>
