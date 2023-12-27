@@ -1,7 +1,12 @@
 package md.labs.model.petfinderdata
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import md.labs.utils.Constants
 
+
+@Entity(tableName = Constants.PET_TABLE)
 data class Pet(
     @SerializedName("website_link")
     val websiteLink: String = "",
@@ -12,13 +17,13 @@ data class Pet(
     @SerializedName("status_changed_at")
     val statusChangedAt: String = "",
     @SerializedName("description")
-    val description: String?,
+    val description: String? = null,
     @SerializedName("colors")
     val colors: Colors = Colors(),
     @SerializedName("breeds")
     val breeds: Breeds = Breeds(),
     @SerializedName("tags")
-    val tags: List<String>?,
+    val tags: List<String>? = null,
     @SerializedName("coat")
     val coat: String? = "",
     @SerializedName("environment")
@@ -31,6 +36,7 @@ data class Pet(
     val name: String = "",
     @SerializedName("attributes")
     val attributes: Attributes = Attributes(),
+    @PrimaryKey
     @SerializedName("id")
     val id: Int = 0,
     @SerializedName("category")

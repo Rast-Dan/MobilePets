@@ -12,9 +12,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.SharingStarted.Companion.Lazily
-import kotlinx.coroutines.flow.firstOrNull
-import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
@@ -23,15 +20,6 @@ import md.labs.db.PetRepository
 import md.labs.model.petfinderdata.Pet
 import java.io.IOException
 import javax.inject.Inject
-import kotlin.math.min
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.sync.Mutex
-import kotlinx.coroutines.sync.withLock
-import md.labs.model.petfinderdata.Pet
-import java.io.IOException
 import kotlin.math.min
 
 @SuppressLint("MutableCollectionMutableState")

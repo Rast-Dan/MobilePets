@@ -15,13 +15,11 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -32,24 +30,22 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.buildAnnotatedString
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import md.labs.R
-import md.labs.model.petfinderdata.Pet
-import md.labs.viewmodel.ListScreenViewModel
 import md.labs.model.petfinderdata.Attributes
 import md.labs.model.petfinderdata.Environment
 import md.labs.model.petfinderdata.Pet
 import md.labs.ui.theme.MobileDevelopmentLabsTheme
+import md.labs.viewmodel.ListScreenViewModel
 
 @Composable
 fun DetailScreen(navController: NavHostController, id: Int?, viewModel: ListScreenViewModel = hiltViewModel()) {
@@ -60,7 +56,7 @@ fun DetailScreen(navController: NavHostController, id: Int?, viewModel: ListScre
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    text = "DetailScreen, pet=$pet",
+                    text = "DetailScreen, pet=$id",
                     style = MaterialTheme.typography.bodyLarge
                 )
             }

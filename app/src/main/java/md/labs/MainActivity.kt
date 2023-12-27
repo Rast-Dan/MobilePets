@@ -15,19 +15,14 @@ import androidx.navigation.NavBackStackEntry
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navArgument
-import dagger.hilt.android.AndroidEntryPoint
 import coil.Coil
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
+import dagger.hilt.android.AndroidEntryPoint
 import md.labs.model.MyImageLoaderFactory
-import md.labs.model.petfinderdata.Pet
 import md.labs.ui.Navigation
 import md.labs.ui.screens.detail.DetailScreen
 import md.labs.ui.screens.list.ListScreen
 import md.labs.ui.screens.login.LoginScreen
 import md.labs.ui.screens.splash.SplashScreen
-import java.net.URLDecoder
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
