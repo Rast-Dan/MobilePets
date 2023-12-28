@@ -39,6 +39,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
+import kotlinx.coroutines.flow.take
 import md.labs.R
 import md.labs.model.petfinderdata.Pet
 import md.labs.ui.Navigation
@@ -77,14 +78,16 @@ fun ListScreen(navController: NavHostController, viewModel: ListScreenViewModel 
                 val pets by viewModel.pets.collectAsState(
                     initial = emptyList()
                 )
-                PetsList(pets = ArrayList(pets), originalDataOffset = dataOffset, navController = navController)
+                PetsList(pets = ArrayList(pets.subList(dataOffset,
+                    pets.size.coerceAtMost(elementsPerPage)
+                )), navController = navController)
             }
         }
     }
 }
 
 @Composable
-fun PetsList(pets: MutableList<Pet>, originalDataOffset: Int, navController: NavHostController) {
+fun PetsList(pets: MutableList<Pet>, navController: NavHostController) {
     val context = LocalContext.current
 
     LazyVerticalGrid (

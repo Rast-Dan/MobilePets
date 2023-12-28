@@ -32,8 +32,8 @@ class MainActivity : ComponentActivity() {
         Coil.setImageLoader(MyImageLoaderFactory(this).newImageLoader())
 
         setContent {
-            //ScreenContent(Navigation.Splash.route)
-            ScreenContent(Navigation.List.route)
+            ScreenContent(Navigation.Splash.route)
+//            ScreenContent(Navigation.List.route)
         }
     }
 }

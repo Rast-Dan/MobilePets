@@ -10,7 +10,7 @@ object RetrofitHelper {
     init {
         val builder = Retrofit.Builder()
             //указываем свой базовый URL
-            .baseUrl("http://192.168.1.136:8000/")
+            .baseUrl("http://192.168.244.144:8000/")
             //используем GSON для конвертации
             .addConverterFactory(
                 GsonConverterFactory.create())

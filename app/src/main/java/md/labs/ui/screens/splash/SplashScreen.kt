@@ -27,7 +27,7 @@ fun SplashScreen (navController: NavController) {
         contentAlignment = Alignment.Center
     ) {
         val composition by rememberLottieComposition(
-            LottieCompositionSpec.RawRes(R.raw.animation_cat))
+            LottieCompositionSpec.RawRes(R.raw.animation))
         // Creating state variable of animation, pass the animation to it
         val logoAnimationState =
             animateLottieCompositionAsState(composition = composition)
